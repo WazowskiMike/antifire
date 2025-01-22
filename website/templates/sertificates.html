@@ -11,40 +11,72 @@
 </div>
 <div class="container my-3">
     <div class="row">
+        <!-- Фильтры для десктопа -->
         <div class="col-12 col-lg-4 filters py-2 d-none d-lg-block">
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
-                Противопожарные двери
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="">
+                Все сертификаты
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
-                Противопожарные двери
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="fire_doors_cert">
+                Сертификаты на противопожарные двери
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
-                Противопожарные двери
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="aluminum_structures_cert">
+                Сертификаты на алюминиевые конструкции
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="smoke_proof_doors_cert">
+                Сертификаты на дымогазонепроницаемые двери
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="product_cert">
+                Сертификаты на изделия
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="installation_license">
+                Лицензия на осуществление монтажных работ
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="certification_tests">
+                Протоколы сертификационных испытаний
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="gost_iso_cert">
+                Сертификат соответствия требованиям ГОСТ Р ИСО
             </button>
         </div>
+
+        <!-- Фильтры для мобильных устройств -->
         <div class="col-12 d-block d-lg-none mb-3">
             <div class="filters-swiper py-2">
                 <div class="swiper-wrapper">
-                    <button class="filter-btn py-2 text-center fw-medium me-2">
-                        Противопожарные двери
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="">
+                        Все сертификаты
                     </button>
-                    <button class="filter-btn py-2 text-center fw-medium me-2">
-                        Противопожарные двери
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="fire_doors_cert">
+                        Сертификаты на противопожарные двери
                     </button>
-                    <button class="filter-btn py-2 text-center fw-medium me-2">
-                        Противопожарные двери
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="aluminum_structures_cert">
+                        Сертификаты на алюминиевые конструкции
                     </button>
-                    <button class="filter-btn py-2 text-center fw-medium me-2">
-                        Противопожарные двери
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="smoke_proof_doors_cert">
+                        Сертификаты на дымогазонепроницаемые двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="product_cert">
+                        Сертификаты на изделия
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="installation_license">
+                        Лицензия на осуществление монтажных работ
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="certification_tests">
+                        Протоколы сертификационных испытаний
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2" data-category="gost_iso_cert">
+                        Сертификат соответствия требованиям ГОСТ Р ИСО
                     </button>
                 </div>
             </div>
         </div>
+
+        <!-- Список сертификатов -->
         <div class="col-12 col-lg-8">
-            <div class="row">
+            <div class="row" id="sertificate-list">
                 {% for sertificate in sertificates %}
                 <div class="col-12 col-md-6 col-lg-3">
-                    <img src="{{ sertificate.photo.url }}" alt="{{sertificate.title}}">
+                    <img src="{{ sertificate.photo.url }}" alt="{{ sertificate.title }}">
                 </div>
                 {% endfor %}
             </div>
@@ -87,4 +119,34 @@
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const sertificateList = document.getElementById('sertificate-list');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                fetch(`/filter-sertificates/?category=${category}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Очистить список сертификатов
+                        sertificateList.innerHTML = '';
+
+                        // Добавить новые сертификаты
+                        data.sertificates.forEach(sert => {
+                            const sertHtml = `
+                                <div class="col-12 col-md-6 col-lg-3">
+                                    <img src="${sert.photo}" alt="${sert.title}">
+                                </div>
+                            `;
+                            sertificateList.insertAdjacentHTML('beforeend', sertHtml);
+                        });
+                    });
+            });
+        });
+    });
+</script>
+
 {% endblock content %}

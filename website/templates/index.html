@@ -33,7 +33,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-md-0">
+        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mt-3 mt-md-0">
             <div class="row card-theme w-100 h-100 justify-content-between">
                 <div class="col-12 px-0">
                     <img src="{% static "img/door-1.png" %}" alt="Противопожарные двери" class="card-img">
@@ -41,11 +41,11 @@
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные двери</p>
                     <p class="font-s text-white">Противопожарные двери по вашим размерам за 24 часа</p>
-                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_doors">Подробнее</a>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-md-0">
+        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mt-3 mt-md-0">
             <div class="row card-theme w-100 h-100 justify-content-between">
                 <div class="col-12 px-0">
                     <img src="{% static "img/door-2.png" %}" alt="Противопожарные двери" class="card-img">
@@ -53,31 +53,19 @@
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные ворота</p>
                     <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
-                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_gates">Подробнее</a>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-lg-0">
+        <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center mt-3 mt-lg-0">
             <div class="row card-theme w-100 h-100 justify-content-between">
                 <div class="col-12 px-0">
                     <img src="{% static "img/door-3.png" %}" alt="Противопожарные двери" class="card-img">
                 </div>
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные люки</p>
-                    <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
-                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-lg-0">
-            <div class="row card-theme w-100 h-100 justify-content-between">
-                <div class="col-12 px-0">
-                    <img src="{% static "img/door-3.png" %}" alt="Противопожарные двери" class="card-img">
-                </div>
-                <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
-                    <p class="fs-6 text-white fw-semibold">Противопожарные люки</p>
-                    <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
-                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                    <p class="font-s text-white">Противопожарные люки по вашим размерам за 24 часа</p>
+                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_hatches">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -100,7 +88,7 @@
                                 <a href="#" class="btn card-btn fw-bold px-3"><i class="fa-brands fa-telegram me-2"></i>Telegram</a>
                             </div>
                             <div class="col-12 col-lg-auto d-flex justify-content-center mt-2 mt-lg-0">
-                                <a href="#" class="btn card-btn fw-bold px-3"><i class="fa-brands fa-whatsapp me-2"></i></i>WhatsApp</a>
+                                <a href="https://wa.me/89687922261" class="btn card-btn fw-bold px-3"><i class="fa-brands fa-whatsapp me-2"></i></i>WhatsApp</a>
                             </div>
                         </div>
                     </div>
@@ -109,72 +97,87 @@
         </div>
     </div>
 </div>
-<div class="container py-3">
-    <div class="row d-none d-lg-flex">
-        <div class="col-12 col-lg-4 filters py-2 ms-3">
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+<div class="container py-3" id="products">
+    <!-- Фильтры -->
+    <div class="row">
+        <div class="col-12 d-block d-lg-none mb-3">
+            <div class="filters-swiper py-2">
+                <div class="swiper-wrapper">
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="">
+                        Сбросить фильтры
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="fire_doors">
+                        Противопожарные двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="fire_gates">
+                        Противопожарные ворота
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="fire_hatches">
+                        Противопожарные люки
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="hidden_doors">
+                        Скрытые двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="ultra_clear_structures">
+                        Сверхпрозрачные конструкции
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="technical_products">
+                        Технические изделия
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2 reset-filter" data-category="aluminum_structures">
+                        Алюминиевые конструкции
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 filters py-2 d-none d-lg-block">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2 reset-filter" data-category="">
+                Сбросить фильтры
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="fire_doors">
                 Противопожарные двери
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="fire_gates">
                 Противопожарные ворота
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="fire_hatches">
                 Противопожарные люки
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="hidden_doors">
                 Скрытые двери
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="ultra_clear_structures">
                 Сверхпрозрачные конструкции
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2" data-category="technical_products">
                 Технические изделия
             </button>
-            <button class="filter-btn w-100 py-2 text-center fw-medium">
+            <button class="filter-btn w-100 py-2 text-center fw-medium" data-category="aluminum_structures">
                 Алюминиевые конструкции
             </button>
         </div>
+
+        <!-- Товары -->
         <div class="col-12 col-lg-8">
-            
-        </div>
-    </div>
-    <div class="row d-flex d-lg-none justify-content-end mb-2">
-        <div class="d-block d-lg-none filters-swiper py-2">
-            <div class="swiper-wrapper">
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Противопожарные двери
-                </button>
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Противопожарные ворота
-                </button>
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Противопожарные люки
-                </button>
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Скрытые двери
-                </button>
-                \<button class="filter-btn py-2 text-center fw-medium me-2">
-                    Сверхпрозрачные конструкции
-                </button>
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Технические изделия
-                </button>
-                <button class="filter-btn py-2 text-center fw-medium me-2">
-                    Алюминиевые конструкции
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="row justify-content-end">
-        <div class="col-12 col-lg-8">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-6">
-                    <a href="#index-form" class="btn all-prod-btn-1 btn-shadow w-100 fw-bold">Заказать в один клик<i class="fa-solid fa-circle-check ms-2"></i></a>
+            <div class="row" id="product-list">
+                {% for product in products %}
+                <div class="col-12 col-lg-4 col-xl-3">
+                    <div class="card product-card mb-3 h-100" style="width: 100%;">
+                        <img src="{{ product.photo.url }}" class="card-img-top p-2" alt="{{ product.title }}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="fs-6 fw-light flex-grow-1 product-title">{{ product.title }}</h5>
+                            <p class="card-text fw-semibold">от {{ product.price }} Р./м2</p>
+                            <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid contact-col py-3">
     <div class="row">
         <div class="col-12">
@@ -202,17 +205,17 @@
                                             <!-- Изображения для открытия в модальном окне -->
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="0">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d1.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="1">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d2.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="2">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d3.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                         </div>
@@ -223,17 +226,17 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="3">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d4.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="4">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d5.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="5">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d6.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                         </div>
@@ -244,17 +247,17 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="6">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d7.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="7">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d8.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                             <div class="col-4">
                                                 <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="8">
-                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                    <img src="{% static 'img/d9.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                                 </a>
                                             </div>
                                         </div>
@@ -274,21 +277,34 @@
                 </div>
                 <div class="row d-flex d-lg-none">
                     <div class="col-12">
-                        <div id="carouselExampleDarkMobile" class="carousel carousel-dark slide carousel-fade">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            </div>
+                        <div id="carouselExampleDarkMobile" class="carousel carousel-dark slide carousel-slide">
                             <div class="carousel-inner contain">
                                 <div class="carousel-item active" data-bs-interval="10000">
-                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                    <img src="{% static 'img/d1.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="10000">
-                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                    <img src="{% static 'img/d2.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                 </div>
                                 <div class="carousel-item" data-bs-interval="10000">
-                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                    <img src="{% static 'img/d3.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d4.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d5.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d6.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d7.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d8.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/d9.jpeg' %}" alt="Противопожарные двери" class="card-img">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDarkMobile" data-bs-slide="prev">
@@ -317,13 +333,31 @@
                 <div id="galleryCarousel" class="carousel slide" data-bs-ride="false">
                     <div class="carousel-inner contain">
                         <div class="carousel-item active" data-bs-interval="10000">
-                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                            <img src="{% static 'img/d1.jpeg' %}" alt="Противопожарные двери" class="card-img">
                         </div>
                         <div class="carousel-item" data-bs-interval="10000">
-                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                            <img src="{% static 'img/d2.jpeg' %}" alt="Противопожарные двери" class="card-img">
                         </div>
                         <div class="carousel-item" data-bs-interval="10000">
-                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                            <img src="{% static 'img/d3.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d4.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d5.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d6.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d7.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d8.jpeg' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/d9.jpeg' %}" alt="Противопожарные двери" class="card-img">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
@@ -413,4 +447,44 @@
     });
   });
 </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productList = document.getElementById('product-list');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                // Формируем URL для запроса
+                const url = category ? `/filter-products/?category=${category}` : '/filter-products/';
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Очистить текущий список продуктов
+                        productList.innerHTML = '';
+
+                        // Заполнить новыми продуктами (адаптировано для мобильных и десктопа)
+                        data.products.forEach(product => {
+                            const productHtml = `
+                                <div class="col-12 col-lg-4 col-xl-3">
+                                    <div class="card product-card mb-3 h-100" style="width: 100%;">
+                                        <img src="${product.photo}" class="card-img-top p-2" alt="${product.title}">
+                                        <div class="card-body d-flex flex-column">
+                                            <h5 class="fs-6 fw-light flex-grow-1 product-title">${product.title}</h5>
+                                            <p class="card-text fw-semibold">от ${product.price} Р./м2</p>
+                                            <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                            productList.insertAdjacentHTML('beforeend', productHtml);
+                        });
+                    });
+            });
+        });
+    });
+</script>
+
 {% endblock content %}

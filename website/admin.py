@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Blog, BlogPhoto
-from .models import Gallery, GalleryPhoto, Sertificate
+from .models import Gallery, GalleryPhoto, Sertificate, Product
 
 class BlogPhotoInline(admin.TabularInline):
     model = BlogPhoto
@@ -31,3 +31,4 @@ class SertificateAdmin(admin.ModelAdmin):
     list_display = ("title", "photo")
     
 admin.site.register(Blog, BlogAdmin)
+admin.site.register(Product)

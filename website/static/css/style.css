@@ -542,3 +542,44 @@ p {
     max-height: 80vh; /* 90% от высоты экрана */
     object-fit: contain; /* Сохраняет пропорции изображения */
   }
+
+.card-body {
+    background-color: var(--red);
+    color: white;
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.product-card .card-img-top {
+    max-height: 200px; /* Ограничивает высоту изображения */
+    object-fit: contain; /* Обрезает изображение, чтобы соответствовать контейнеру */
+    flex-shrink: 0; /* Запрещает уменьшение изображения */
+}
+
+.product-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.product-title {
+    flex-grow: 1; /* Растягивает заголовок, чтобы заполнить оставшееся пространство */
+    display: flex;
+    align-items: center; /* Центрирует текст вертикально */
+    text-align: center; /* Центрирует текст по горизонтали */
+    word-break: break-word; /* Разбивает слова для предотвращения переполнения */
+}
+
+.galery-photo {
+    object-fit: cover;
+}
+
+h1, h2, h3, h4, p {
+    color: inherit !important;
+}
