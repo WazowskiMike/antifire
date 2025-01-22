@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Противопожарные двери - {{blog.title}}{% endblock title %}
+{% block content %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <p class="fw-semibold font-s"><a href="/" class="underline text-black">Главная</a> <i class="fa-solid fa-arrow-right mx-2 font-s"></i> Галерея<i class="fa-solid fa-arrow-right mx-2 font-s"></i> {{blog.title}}</p>
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <h1>{{blog.title}}</h1>
+        </div>
+    </div>
+</div>
+<div class="container-fluid py-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <div class="row d-flex">
+                    <div class="col-12">
+                        <div id="carouselExampleDarkMobile" class="carousel slide carousel-fade">
+                            <div class="carousel-indicators">
+                                {% for photo in photos %}
+                                    <button type="button" data-bs-target="#carouselExampleDarkMobile" 
+                                            data-bs-slide-to="{{ forloop.counter0 }}" 
+                                            class="{% if forloop.first %}active{% endif %}" 
+                                            aria-current="{% if forloop.first %}true{% endif %}" 
+                                            aria-label="Slide {{ forloop.counter }}"></button>
+                                {% endfor %}
+                            </div>
+                            <div class="carousel-inner">
+                                {% for photo in photos %}
+                                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                        <img src="{{ photo.photo.url }}" class="d-block w-100 carousel-image" alt="{{ photo.caption }}">
+                                        {% if photo.caption %}
+                                            <div class="carousel-caption d-none d-md-block">
+                                                <p>{{ photo.caption }}</p>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDarkMobile" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon galery-control" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDarkMobile" data-bs-slide="next">
+                                <span class="carousel-control-next-icon galery-control" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="thumbnails d-flex">
+                            {% for photo in blog.photos.all %}
+                            <img 
+                                src="{{ photo.photo.url }}" 
+                                alt="Thumbnail" 
+                                class="thumbnail-img"
+                                onclick="changeMainImage('{{ photo.photo.url }}', 'main-image-{{ blog.id }}')"
+                                ondragstart="return false;"
+                                style="cursor: pointer;"
+                            >
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            {{blog.content|truncatewords_html:40|safe}}
+        </div>
+    </div>
+</div>
+<div class="container-fluid footer-form py-3 mb-3 my-5" id="index-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <div class="row justify-content-evenly">
+                    <div class="col-2 d-none d-lg-flex align-items-center">
+                        <img src="{% static "img/logo.png" %}" alt="Лого" class="form-img">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-footer">
+                            <div class="form-container">
+                                <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" id="name" placeholder=" " required>
+                                        <label for="name">Имя</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="phone" placeholder=" " required>
+                                        <label for="phone">Номер телефона</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="form-text">
+                                            *Оставляя заявку вы соглашаетесь <a href="#">политикой конфиденциальности и правилами пользования</a>.
+                                        </small>
+                                    </div>
+                                    <button type="submit">Получить консультацию!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function changeMainImage(newSrc, mainImageId) {
+        const mainImage = document.getElementById(mainImageId);
+        if (mainImage) {
+            mainImage.src = newSrc;
+        }
+    }
+</script>
+{% endblock content %}

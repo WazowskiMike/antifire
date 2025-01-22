@@ -1,0 +1,416 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Противопожарные двери - Главная{% endblock title %}
+{% block content %}
+<div class="fire-hero container-fluid py-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    <h1 class="fw-bold fs-3 text-center">ПРОТИВОПОЖАРНЫЕ ДВЕРИ ПО ИНДВИДУАЛЬНЫМ РАЗМЕРАМ!</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-3">
+                <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-center align-items-center align-items-sm-start align-items-md-center">
+                    <h2 class="fs-2 fw-bold shadow-text-md">ЗАМЕР  ДВЕРИ</h2>
+                    <h2 class="fs-1 fw-bold shadow-text-md">БЕСПЛАТНО</h2>
+                    <p class="fw-semibold"><img src="{% static "img/icons/verified.svg" %}" alt="Гарантия" class="hero-icon"> Гарантия 2 года</p>
+                    <p class="fw-semibold"><img src="{% static "img/icons/24.svg" %}" alt="24 часа на производство" class="hero-icon-1 me-2">Производство двери за 24 часа !</p>
+                    <a href="tel:+7 (968) 792-22-61" class="btn hero-btn fs-4 fw-bold px-5 mt-3">ПОЗВОНИТЬ</a>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center mt-2 mt-md-0">
+                    <img src="{% static "img/hero-img.png" %}" alt="Двери херо секция" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{% static "img/avito.png" %}" alt="5 звезд на Авито" class="avito-hero d-none d-md-block">
+</div>
+<div class="container py-3" id="catalog">
+    <div class="row">
+        <div class="col-12">    
+            <p class="fw-bold fs-5 pb-3">Каталог продукции</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-md-0">
+            <div class="row card-theme w-100 h-100 justify-content-between">
+                <div class="col-12 px-0">
+                    <img src="{% static "img/door-1.png" %}" alt="Противопожарные двери" class="card-img">
+                </div>
+                <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
+                    <p class="fs-6 text-white fw-semibold">Противопожарные двери</p>
+                    <p class="font-s text-white">Противопожарные двери по вашим размерам за 24 часа</p>
+                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-md-0">
+            <div class="row card-theme w-100 h-100 justify-content-between">
+                <div class="col-12 px-0">
+                    <img src="{% static "img/door-2.png" %}" alt="Противопожарные двери" class="card-img">
+                </div>
+                <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
+                    <p class="fs-6 text-white fw-semibold">Противопожарные ворота</p>
+                    <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
+                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-lg-0">
+            <div class="row card-theme w-100 h-100 justify-content-between">
+                <div class="col-12 px-0">
+                    <img src="{% static "img/door-3.png" %}" alt="Противопожарные двери" class="card-img">
+                </div>
+                <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
+                    <p class="fs-6 text-white fw-semibold">Противопожарные люки</p>
+                    <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
+                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center mt-3 mt-lg-0">
+            <div class="row card-theme w-100 h-100 justify-content-between">
+                <div class="col-12 px-0">
+                    <img src="{% static "img/door-3.png" %}" alt="Противопожарные двери" class="card-img">
+                </div>
+                <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
+                    <p class="fs-6 text-white fw-semibold">Противопожарные люки</p>
+                    <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
+                    <a href="#" class="btn card-btn font-s mt-1">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mb-1">
+    <div class="row">
+        <div class="col-12 contact-col py-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-12 col-lg-auto d-flex justify-content-center">
+                                <p class="fs-3 text-white fw-semibold">Запишись на замер!</p>
+                            </div>
+                            <div class="col-12 col-lg-auto d-flex justify-content-center mt-2 mt-lg-0">
+                                <a href="tel:+7 (968) 792-22-61" class="btn card-btn fw-bold px-3"><i class="fa-solid fa-phone me-2"></i>+7 (968) 792-22-61</a>
+                            </div>
+                            <div class="col-12 col-lg-auto d-flex justify-content-center mt-2 mt-lg-0">
+                                <a href="#" class="btn card-btn fw-bold px-3"><i class="fa-brands fa-telegram me-2"></i>Telegram</a>
+                            </div>
+                            <div class="col-12 col-lg-auto d-flex justify-content-center mt-2 mt-lg-0">
+                                <a href="#" class="btn card-btn fw-bold px-3"><i class="fa-brands fa-whatsapp me-2"></i></i>WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container py-3">
+    <div class="row d-none d-lg-flex">
+        <div class="col-12 col-lg-4 filters py-2 ms-3">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные двери
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные ворота
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные люки
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Скрытые двери
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Сверхпрозрачные конструкции
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Технические изделия
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium">
+                Алюминиевые конструкции
+            </button>
+        </div>
+        <div class="col-12 col-lg-8">
+            
+        </div>
+    </div>
+    <div class="row d-flex d-lg-none justify-content-end mb-2">
+        <div class="d-block d-lg-none filters-swiper py-2">
+            <div class="swiper-wrapper">
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Противопожарные двери
+                </button>
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Противопожарные ворота
+                </button>
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Противопожарные люки
+                </button>
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Скрытые двери
+                </button>
+                \<button class="filter-btn py-2 text-center fw-medium me-2">
+                    Сверхпрозрачные конструкции
+                </button>
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Технические изделия
+                </button>
+                <button class="filter-btn py-2 text-center fw-medium me-2">
+                    Алюминиевые конструкции
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-12 col-lg-8">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-6">
+                    <a href="#index-form" class="btn all-prod-btn-1 btn-shadow w-100 fw-bold">Заказать в один клик<i class="fa-solid fa-circle-check ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid contact-col py-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <div class="row pb-3 justify-content-between">
+                    <div class="col-auto">
+                        <p class="fw-bold fs-5 text-white">Галерея</p>
+                    </div>
+                    <div class="col-auto d-flex align-items-center">
+                        <a href="{% url 'galery' %}" class="text-white text-center underline fw-semibold">Больше фото<i class="fa-solid fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="row d-none d-lg-flex desctop-carousel py-3">
+                    <div class="col-12">
+                        <div id="carouselExampleDarkDesctop" class="carousel carousel-dark slide carousel-fade">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleDarkDesctop" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleDarkDesctop" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleDarkDesctop" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner contain">
+                                <div class="carousel-item active" data-bs-interval="10000">
+                                    <div class="container">
+                                        <div class="row">
+                                            <!-- Изображения для открытия в модальном окне -->
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="0">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="1">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="2">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="3">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="4">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="5">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="6">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="7">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="8">
+                                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev justify-content-start" type="button" data-bs-target="#carouselExampleDarkDesctop" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next justify-content-end" type="button" data-bs-target="#carouselExampleDarkDesctop" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex d-lg-none">
+                    <div class="col-12">
+                        <div id="carouselExampleDarkMobile" class="carousel carousel-dark slide carousel-fade">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner contain">
+                                <div class="carousel-item active" data-bs-interval="10000">
+                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                                <div class="carousel-item" data-bs-interval="10000">
+                                    <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDarkMobile" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDarkMobile" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Модальное окно с каруселью -->
+<div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="galleryCarousel" class="carousel slide" data-bs-ride="false">
+                    <div class="carousel-inner contain">
+                        <div class="carousel-item active" data-bs-interval="10000">
+                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                        <div class="carousel-item" data-bs-interval="10000">
+                            <img src="{% static 'img/door-3.png' %}" alt="Противопожарные двери" class="card-img">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-3">
+    <div class="certificate-slider">
+        {% for certificate in certificates %}
+        <div class="mx-2">
+            <!-- Изображение сертификата -->
+            <img src="{{ certificate.photo.url }}" alt="{{certificate.title}}" class="certificate-img" data-bs-toggle="modal" data-bs-target="#certificateModal" data-img="{{ certificate.photo.url }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="certificateModalLabel">Сертификат</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Изображение сертификата будет сюда загружено -->
+        <img id="modalImage" src="" class="img-fluid" alt="Certificate">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid footer-form py-3 mb-3" id="index-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <div class="row justify-content-evenly">
+                    <div class="col-2 d-none d-lg-flex align-items-center">
+                        <img src="{% static "img/logo.png" %}" alt="Лого" class="form-img">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-footer">
+                            <div class="form-container">
+                                <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" id="name" placeholder=" " required>
+                                        <label for="name">Имя</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="phone" placeholder=" " required>
+                                        <label for="phone">Номер телефона</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="form-text">
+                                            *Оставляя заявку вы соглашаетесь с <a href="#">политикой конфиденциальности и правилами пользования</a>.
+                                        </small>
+                                    </div>
+                                    <button type="submit">Получить консультацию!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  // Слушаем клик на изображение сертификата
+  document.querySelectorAll('.certificate-img').forEach(img => {
+    img.addEventListener('click', function() {
+      const imageUrl = this.getAttribute('data-img');
+      // Загружаем изображение в модальное окно
+      document.getElementById('modalImage').src = imageUrl;
+    });
+  });
+</script>
+{% endblock content %}

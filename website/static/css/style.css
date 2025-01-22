@@ -1,0 +1,544 @@
+:root {
+    --red: #6D0000;
+    --pink:#FFC3C3;
+}
+
+.navbar {
+    background-color: var(--red);
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.font-s {
+    font-size: small;
+}
+
+.font-xs {
+    font-size: x-small;
+}
+
+a {
+    text-decoration: none;
+}
+
+.under-nav-row {
+    background-color: #dcdcdcb8;
+}
+
+.footer-btn {
+    background-color: white;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: var(--red);
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.nav-logo {     
+    height: 75px;
+    width: 75px;
+}
+
+@media (max-width: 990px) {
+    .nav-logo {     
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media (max-width: 700px) {
+    .nav-logo {     
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.fire-hero {
+    background-image: url(../img/fire.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-color: var(--pink);
+    position: relative;
+}
+
+.shadow-text-md {
+    text-shadow: 4px 4px 4px #00000068;
+    letter-spacing: 9px;
+}
+
+.hero-img {
+    height: 300px;
+    width: auto;
+}
+
+@media (max-width:776px) {
+    .hero-img {
+        height: 200px;
+        width: auto;
+    }
+}
+
+h1,h2,h3,h4,p {
+    color:black;
+}
+
+.hero-icon {
+    height: 25px;
+    width: auto;
+}
+
+.hero-icon-1 {
+    height: 22px;
+    width: auto;
+}
+
+.hero-btn {
+    background-color: var(--red);
+    border-radius: 8px;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: white;
+    color: var(--red);
+    transform: scale(1.05);
+}
+
+.avito-hero {
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    height: 100px;
+    width: auto;
+}
+
+.card-theme {
+    background-color: var(--red);
+    border-radius: 8px;
+}
+
+.card-btn {
+    background-color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #a4000094;
+    color: white;
+    transform: scale(1.05);
+}
+
+.card-img {
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.contact-col {
+    background-color: var(--red);
+}
+
+.small-menu-item:hover {
+    text-decoration: underline;
+    color: var(--red) !important;
+}
+
+.small-menu-item {
+    transition: all ease-in-out .3s;
+}
+
+.offcanvas-header {
+    background-color: var(--red);
+    color: white;
+}
+
+.offcanvas {
+    background-image: url(../img/fire.png);
+    background-position: bottom;
+    background-repeat: repeat-x;
+}
+
+.nav-link, .nav-link.active {
+    color: black !important;
+}
+
+.filters {
+    background-color: var(--red);
+    border-radius: 8px;
+}
+
+.filter-btn {
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    transition: all ease-in-out .3s;
+    border: 0;
+}
+
+.filter-btn:hover {
+    transform: scale(1.02);
+}
+
+.filter-btn:focus {
+    background-color: #FFC3C3;
+}
+
+.btn-shadow {
+    box-shadow: 4px 4px 4px #0000004d;
+}
+
+.all-prod-btn {
+    background-color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.all-prod-btn:hover {
+    background-color: #a40000;
+    color: white;
+    transform: scale(1.05);
+}
+
+.all-prod-btn-1 {
+    background-color: var(--red);
+    color: white;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.all-prod-btn-1:hover {
+    background-color: white;
+    color: #a40000;
+    transform: scale(1.05);
+}
+
+.btn-filters-round-red {
+    border-radius: 50%;
+    background-color: var(--red);
+    color: white;
+    transition: all ease-in-out .1s;
+    border: 0;
+}
+
+.btn-filters-round-red:hover {
+    background-color: white;
+    color: var(--red);
+    transform: scale(1.05);
+    box-shadow: 4px 4px 4px #0000004d;
+}
+
+.underline {
+    text-decoration: underline !important;
+}
+
+.desctop-carousel {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.slick-slide img {
+    max-height: 300px;
+    margin: auto;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.certificate-slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer-form {
+    background-color: var(--red);
+}
+
+.form-img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-footer {
+    background-color: white;
+    border-radius: 8px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.form-container .form-control {
+    background-color: #ffe6e6;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.form-container .form-control:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.form-container .form-text {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.form-container .form-text a {
+    color: #d9534f;
+    text-decoration: underline;
+}
+
+.form-container button {
+    background-color: #7a0c0c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #990f0f;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    background-color: #ffe6e6;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    font-size: 16px;
+    width: 100%;
+    padding: 10px 15px;
+    box-shadow: none;
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -17%;
+    left: 10px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.form-container .form-text {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.form-container .form-text a {
+    color: #d9534f;
+    text-decoration: underline;
+}
+
+.form-container button {
+    background-color: #7a0c0c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #990f0f;
+}
+
+.x-mark {
+    border: 0;
+    background-color: transparent;
+    color: white;
+}
+
+.custom-card {
+    background-color: #6D0000; /* Тёмно-красный */
+    border-radius: 10px;
+    color: white;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.big-image {
+    width: 100%; /* Занимает всю ширину блока */
+    height: 250px; /* Фиксированная высота для всех изображений */
+    object-fit: cover; /* Картинка сохраняет пропорции, обрезая лишнее */
+    border-radius: 10px;
+}
+.thumbnails {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto; /* Прокрутка только через скроллбар */
+    padding: 10px 0;
+    white-space: nowrap; /* Убирает перенос элементов */
+}
+.thumbnail-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0; /* Миниатюры не сжимаются */
+}
+
+.card-img-top {
+    border-radius: 8px;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный тёмный фон */
+}
+.carousel-inner img {
+    object-fit: cover;
+    width: 100%;
+    height: 500px; /* Одинаковая высота для всех изображений */
+}
+
+.btn-more {
+    background-color: white;
+    color: var(--red);
+    transition: all ease-in-out .1s;
+    width: 90%;
+}
+
+.btn-more:hover {
+    background-color: white;
+    color: var(--red);
+    transform: scale(1.05);
+}
+
+.msk-delivery {
+    background-color: var(--red);
+    background-image: url(../img/fire-left.png), url(../img/fire-right.png);
+    background-position: left, right;
+    background-repeat: repeat-y, repeat-y;
+    border-radius: 8px;
+}
+
+.guarantee {
+    background-color: var(--red);
+    border-radius: 8px;
+}
+
+.mark-background {
+    background-image: url(../img/circle-check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.247);
+    border-radius: 8px;
+}
+
+.filters-swiper {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    background-color: var(--red);
+    padding: 10px;
+}
+
+.filters-swiper::-webkit-scrollbar {
+    display: none; /* Скрыть скроллбар */
+}
+
+.filters-swiper .filter-btn {
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    transition: all ease-in-out 0.3s;
+    border: 0;
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filters-swiper .filter-btn:focus {
+    outline: none;
+    background-color: var(--red);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Увеличенная тень */
+    transform: scale(1.1); /* Легкое увеличение */
+}
+
+.filters-swiper .filter-btn:hover {
+    background-color: var(--red);
+    color: white;
+    transform: scale(1.05); /* Немного меньшее увеличение при наведении */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-image {
+    object-fit: contain !important;
+}
+
+.galery-control {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+p {
+    color: inherit;
+}
+
+.contain img {
+    object-fit: contain !important;
+}
+
+/* Ограничиваем максимальные размеры изображения в модальном окне */
+#certificateModal .modal-body img {
+    max-width: 100%;
+    max-height: 80vh; /* 90% от высоты экрана */
+    object-fit: contain; /* Сохраняет пропорции изображения */
+  }

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Противопожарные двери - Сертификаты{% endblock title %}
+{% block content %}
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <p class="fw-semibold font-s"><a href="/" class="underline text-black">Главная</a> <i class="fa-solid fa-arrow-right mx-2 font-s"></i> Сертификаты</p>
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12 col-lg-4 filters py-2 d-none d-lg-block">
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные двери
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные двери
+            </button>
+            <button class="filter-btn w-100 py-2 text-center fw-medium mb-2">
+                Противопожарные двери
+            </button>
+        </div>
+        <div class="col-12 d-block d-lg-none mb-3">
+            <div class="filters-swiper py-2">
+                <div class="swiper-wrapper">
+                    <button class="filter-btn py-2 text-center fw-medium me-2">
+                        Противопожарные двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2">
+                        Противопожарные двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2">
+                        Противопожарные двери
+                    </button>
+                    <button class="filter-btn py-2 text-center fw-medium me-2">
+                        Противопожарные двери
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-8">
+            <div class="row">
+                {% for sertificate in sertificates %}
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img src="{{ sertificate.photo.url }}" alt="{{sertificate.title}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid footer-form py-3 mb-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="container">
+                <div class="row justify-content-evenly">
+                    <div class="col-2 d-none d-lg-flex align-items-center">
+                        <img src="{% static "img/logo.png" %}" alt="Лого" class="form-img">
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-footer">
+                            <div class="form-container">
+                                <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
+                                <form>
+                                    <div class="form-group">
+                                        <input type="text" id="name" placeholder=" " required>
+                                        <label for="name">Имя</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" id="phone" placeholder=" " required>
+                                        <label for="phone">Номер телефона</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small class="form-text">
+                                            *Оставляя заявку вы соглашаетесь с <a href="#">политикой конфиденциальности и правилами пользования</a>.
+                                        </small>
+                                    </div>
+                                    <button type="submit">Получить консультацию!</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

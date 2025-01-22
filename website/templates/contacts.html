@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Противопожарные двери - Контакты{% endblock title %}
+{% block content %} 
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <p class="fw-semibold font-s"><a href="/" class="underline text-black">Главная</a> <i class="fa-solid fa-arrow-right mx-2 font-s"></i> Контакты</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="form-footer">
+                <div class="form-container">
+                    <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder=" " required>
+                            <label for="name">Имя</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="phone" placeholder=" " required>
+                            <label for="phone">Номер телефона</label>
+                        </div>
+                        <div class="mb-3">
+                            <small class="form-text">
+                                *Оставляя заявку вы соглашаетесь с <a href="#">политикой конфиденциальности и правилами пользования</a>.
+                            </small>
+                        </div>
+                        <button type="submit">Получить консультацию!</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center">
+            <h1 class="fs-4">Контакты</h1>
+            <p class="fw-semibold"><i class="fa-solid fa-location-dot me-2"></i>Адрес</p>
+            <p>Псковская улица, 87, Тверь</p>
+            <p class="mt-2 fw-semibold"><i class="fa-solid fa-envelope me-2"></i>Email</p>
+            <a href="mailto:info@nes-agency.ru" class="text-black underline">info@nes-agency.ru</a>
+            <p class="mt-2 fw-semibold"><i class="fa-solid fa-phone me-2"></i>Телефон</p>
+            <a href="tel:+7 (968) 792-22-61" class="text-black underline">+7 (968) 792-22-61</a>
+            <p class="mt-2 fw-semibold">Социальные сети</p>
+            <div class="socials d-flex">
+                <a href="#" class="me-2"><i class="fa-brands fa-square-whatsapp" style="color: #63E6BE;"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram" style="color: #74C0FC;"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <div class="msk-delivery p-4 d-flex justify-content-center">
+                <p class="text-white fs-4 fw-semibold">Доставка по Московской области - Бесплатная!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="fs-4">Почему выбирают нас?</h1>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-3 mark-background py-3 d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                    <p class="fw-semibold">Опыт и профессионализм</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mark-background py-3 d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                    <p class="fw-semibold">Широкий ассортимент</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mark-background py-3 d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                    <p class="fw-semibold">Комплексный сервис</p>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mark-background py-3 d-flex align-items-center justify-content-center mt-3 mt-lg-0">
+                    <p class="fw-semibold">Доступные цены</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
