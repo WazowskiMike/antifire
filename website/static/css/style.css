@@ -439,6 +439,10 @@ h1,h2,h3,h4,p {
 .modal-content {
     background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный тёмный фон */
 }
+.galery-detail-img img {
+    height: 80vh !important;
+    object-fit: contain !important;
+}
 .carousel-inner img {
     object-fit: cover;
     width: 100%;
@@ -582,4 +586,8 @@ p {
 
 h1, h2, h3, h4, p {
     color: inherit !important;
+}
+
+#phone-link1 {
+    background-color: #6d0000f6;
 }

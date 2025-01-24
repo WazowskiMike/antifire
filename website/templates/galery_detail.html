@@ -35,7 +35,7 @@
                             <div class="carousel-inner">
                                 {% for photo in photos %}
                                     <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                        <img src="{{ photo.photo.url }}" class="d-block w-100 carousel-image" alt="{{ photo.caption }}">
+                                        <img src="{{ photo.photo.url }}" class="d-block w-100 carousel-image" alt="{{ photo.caption }}" onclick="openModal({{ forloop.counter0 }})">
                                         {% if photo.caption %}
                                             <div class="carousel-caption d-none d-md-block">
                                                 <p>{{ photo.caption }}</p>
@@ -58,18 +58,46 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="thumbnails d-flex">
-                            {% for photo in blog.photos.all %}
+                            {% for photo in photos %}
                             <img 
                                 src="{{ photo.photo.url }}" 
                                 alt="Thumbnail" 
                                 class="thumbnail-img"
-                                onclick="changeMainImage('{{ photo.photo.url }}', 'main-image-{{ blog.id }}')"
+                                onclick="setActiveSlide('{{ forloop.counter0 }}')"
                                 ondragstart="return false;"
-                                style="cursor: pointer;"
-                            >
+                                style="cursor: pointer;">
                             {% endfor %}
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Кнопка закрытия -->
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                <div id="modalCarousel" class="carousel slide d-flex align-items-center h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for photo in photos %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %} galery-detail-img">
+                            <img src="{{ photo.photo.url }}" class="d-block w-100" alt="{{ photo.caption }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#modalCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Предыдущее</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#modalCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Следующее</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -119,11 +147,41 @@
     </div>
 </div>
 <script>
-    function changeMainImage(newSrc, mainImageId) {
-        const mainImage = document.getElementById(mainImageId);
-        if (mainImage) {
-            mainImage.src = newSrc;
+    document.addEventListener('DOMContentLoaded', () => {
+        window.setActiveSlide = function(index) {
+            const carouselElement = document.getElementById('carouselExampleDarkMobile');
+            if (!carouselElement) {
+                return;
+            }
+    
+            let bsCarousel = bootstrap.Carousel.getInstance(carouselElement);
+            if (!bsCarousel) {
+                bsCarousel = new bootstrap.Carousel(carouselElement);
+            }
+            bsCarousel.to(parseInt(index));
+        };
+    })
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const carouselElement = document.getElementById('carouselExampleDarkMobile');
+        if (carouselElement) {
+            const bsCarousel = new bootstrap.Carousel(carouselElement);
+        } else {
+            console.error("Carousel element not found during initialization!");
         }
+    });
+</script>
+<script>
+    function openModal(index) {
+        const modal = new bootstrap.Modal(document.getElementById('carouselModal'));
+        modal.show();
+        const modalCarousel = document.getElementById('modalCarousel');
+        const bsCarousel = bootstrap.Carousel.getInstance(modalCarousel);
+        if (!bsCarousel) {
+            new bootstrap.Carousel(modalCarousel);
+        }
+        bootstrap.Carousel.getInstance(modalCarousel).to(index);
     }
 </script>
 {% endblock content %}

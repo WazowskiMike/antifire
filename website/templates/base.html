@@ -93,6 +93,15 @@
     <main>
         {% block content %}
         {% endblock content %}
+        <div id="phone-container" class="container d-block d-lg-none fixed-bottom mb-5" style="transform: translateY(200%); transition: transform 0.3s;">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center" style="width: 100%;">
+                    <a id ='phone-link1' href="tel:+7 (968) 792-22-61" style="color: white; text-decoration: none; border-radius: 16px; width: 100%;" class="py-3 d-flex justify-content-center fw-semibold fs-5">
+                    +7 (968) 792-22-61
+                    </a>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="container-fluid d-flex justify-content-center py-2 justify-content-md-between">
@@ -134,6 +143,24 @@
                 touchThreshold: 100,
                 autoplay: false 
             });
+        });
+    </script>
+    <script>
+        let lastScrollTop = 0;
+        const phoneContainer = document.getElementById("phone-container");
+    
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+            if (scrollTop > lastScrollTop) {
+                // Скроллим вниз — показать контейнер
+                phoneContainer.style.transform = "translateY(0)";
+            } else {
+                // Скроллим вверх — скрыть контейнер
+                phoneContainer.style.transform = "translateY(200%)";
+            }
+    
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>
