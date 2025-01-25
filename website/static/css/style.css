@@ -559,12 +559,6 @@ p {
     height: 100%;
 }
 
-.product-card .card-img-top {
-    max-height: 200px; /* Ограничивает высоту изображения */
-    object-fit: contain; /* Обрезает изображение, чтобы соответствовать контейнеру */
-    flex-shrink: 0; /* Запрещает уменьшение изображения */
-}
-
 .product-card .card-body {
     display: flex;
     flex-direction: column;
@@ -573,7 +567,7 @@ p {
 }
 
 .product-title {
-    flex-grow: 1; /* Растягивает заголовок, чтобы заполнить оставшееся пространство */
+    height: 5rem; /* Растягивает заголовок, чтобы заполнить оставшееся пространство */
     display: flex;
     align-items: center; /* Центрирует текст вертикально */
     text-align: center; /* Центрирует текст по горизонтали */
@@ -590,4 +584,9 @@ h1, h2, h3, h4, p {
 
 #phone-link1 {
     background-color: #6d0000f6;
+}
+
+.product-card img {
+    height: 200px;
+    object-fit: contain;
 }
