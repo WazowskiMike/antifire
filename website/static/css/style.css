@@ -594,3 +594,19 @@ h1, h2, h3, h4, p {
 .active {
     background-color: #FFC3C3;
 }
+
+.my-btn {
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    transition: all ease-in-out .3s;
+    border: 0;
+}
+
+.my-btn:hover {
+    transform: scale(1.02);
+}
+
+.my-btn:focus {
+    background-color: #FFC3C3;
+}

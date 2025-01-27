@@ -15,13 +15,14 @@
             <div class="form-footer">
                 <div class="form-container">
                     <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
-                    <form>
+                    <form action="" method="post">
+                        {% csrf_token %}
                         <div class="form-group">
-                            <input type="text" id="name" placeholder=" " required>
+                            <input type="text" id="name" name="name" placeholder=" " required>
                             <label for="name">Имя</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="phone" placeholder=" " required>
+                            <input type="text" id="phone" name="phone" placeholder=" " required>
                             <label for="phone">Номер телефона</label>
                         </div>
                         <div class="mb-3">
@@ -37,12 +38,12 @@
         <div class="col-12 col-lg-4 d-flex flex-column justify-content-center">
             <h1 class="fs-4">Контакты</h1>
             <p class="mt-2 fw-semibold"><i class="fa-solid fa-envelope me-2"></i>Email</p>
-            <a href="mailto:info@nes-agency.ru" class="text-black underline">info@nes-agency.ru</a>
+            <a href="mailto:ustanovkadverei.msk@yandex.ru" class="text-black underline">ustanovkadverei.msk@yandex.ru</a>
             <p class="mt-2 fw-semibold"><i class="fa-solid fa-phone me-2"></i>Телефон</p>
             <a href="tel:+7 (968) 792-22-61" class="text-black underline">+7 (968) 792-22-61</a>
             <p class="mt-2 fw-semibold">Социальные сети</p>
             <div class="socials d-flex">
-                <a href="https://wa.me/89687922261" class="me-2"><i class="fa-brands fa-square-whatsapp" style="color: #63E6BE;"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=79687922261" class="me-2"><i class="fa-brands fa-square-whatsapp" style="color: #63E6BE;"></i></a>
                 <a href="#"><i class="fa-brands fa-telegram" style="color: #74C0FC;"></i></a>
             </div>
         </div>

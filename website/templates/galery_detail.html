@@ -122,13 +122,14 @@
                         <div class="form-footer">
                             <div class="form-container">
                                 <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
-                                <form>
+                                <form action="" method="post">
+                                    {% csrf_token %}
                                     <div class="form-group">
-                                        <input type="text" id="name" placeholder=" " required>
+                                        <input type="text" id="name" name="name" placeholder=" " required>
                                         <label for="name">Имя</label>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="phone" placeholder=" " required>
+                                        <input type="text" id="phone" name="phone" placeholder=" " required>
                                         <label for="phone">Номер телефона</label>
                                     </div>
                                     <div class="mb-3">

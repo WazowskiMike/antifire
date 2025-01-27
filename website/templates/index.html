@@ -41,7 +41,7 @@
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные двери</p>
                     <p class="font-s text-white">Противопожарные двери по вашим размерам за 24 часа</p>
-                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_doors">Подробнее</a>
+                    <a href="#products" class="btn my-btn font-s mt-1" data-category="fire_doors">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные ворота</p>
                     <p class="font-s text-white">Противопожарные ворота по вашим размерам за 24 часа</p>
-                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_gates">Подробнее</a>
+                    <a href="#products" class="btn my-btn font-s mt-1" data-category="fire_gates">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                 <div class="col-12 py-2 px-4 d-flex flex-column justify-content-between">
                     <p class="fs-6 text-white fw-semibold">Противопожарные люки</p>
                     <p class="font-s text-white">Противопожарные люки по вашим размерам за 24 часа</p>
-                    <a href="#products" class="btn filter-btn font-s mt-1" data-category="fire_hatches">Подробнее</a>
+                    <a href="#products" class="btn my-btn font-s mt-1" data-category="fire_hatches">Подробнее</a>
                 </div>
             </div>
         </div>
@@ -413,13 +413,14 @@
                         <div class="form-footer">
                             <div class="form-container">
                                 <h3>Оставьте заявку и получите бесплатную консультацию!</h3>
-                                <form>
+                                <form action="" method="post">
+                                    {% csrf_token %}
                                     <div class="form-group">
-                                        <input type="text" id="name" placeholder=" " required>
+                                        <input type="text" id="name" name="name" placeholder=" " required>
                                         <label for="name">Имя</label>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="phone" placeholder=" " required>
+                                        <input type="text" id="phone" name="phone" placeholder=" " required>
                                         <label for="phone">Номер телефона</label>
                                     </div>
                                     <div class="mb-3">
