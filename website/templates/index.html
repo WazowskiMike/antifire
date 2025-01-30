@@ -167,8 +167,8 @@
                         <img src="{{ product.photo.url }}" class="card-img-top p-2" alt="{{ product.title }}">
                         <div class="card-body d-flex flex-column">
                             <h5 class="fs-6 fw-light flex-grow-1 product-title">{{ product.title }}</h5>
-                            <p class="card-text fw-semibold">от {{ product.price }} {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' %}Р.{% else %}Р./м2{% endif %}</p>
-                            <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
+                            <p class="card-text fw-semibold">от {{ product.price }} {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == 'ultra_clear_structures'%}Р.{% else %}Р./м2{% endif %}</p>
+                            <a href="#index-form" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -474,7 +474,7 @@
                                     <img src="${product.photo}" class="card-img-top p-2" alt="${product.title}">
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="fs-6 fw-light flex-grow-1 product-title">${product.title}</h5>
-                                        <p class="card-text fw-semibold">от ${product.price} Р./м2</p>
+                                        <p class="card-text fw-semibold">от ${ product.price } {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == "ultra_clear_structures" %}Р.{% else %}Р./м2{% endif %}</p>
                                         <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
                                     </div>
                                 </div>
