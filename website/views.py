@@ -44,6 +44,7 @@ def filter_products(request):
         {
             'title': product.title,
             'price': product.price,
+            'description': product.description,
             'photo': product.photo.url
         }
         for product in products

@@ -94,6 +94,7 @@ class Product(models.Model):
         choices=CATEGORY_CHOICES, 
         verbose_name="Категория"
     )
+    description = models.TextField(blank=True, verbose_name="Описание")
     
     class Meta:
         verbose_name = "Продукт"

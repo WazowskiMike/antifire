@@ -169,10 +169,38 @@
                             <h5 class="fs-6 fw-light flex-grow-1 product-title">{{ product.title }}</h5>
                             <p class="card-text fw-semibold">от {{ product.price }} {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == 'ultra_clear_structures'%}Р.{% else %}Р./м2{% endif %}</p>
                             <a href="#index-form" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
+                            <button class="btn btn-secondary fw-bold px-3 mt-2" onclick="openModal('{{ product.id }}', '{{ product.title }}', '{{ product.description }}', '{{ product.photo.url }}', '{{ product.price }}')">Подробнее</button>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div id="product-modal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 10500; flex-grow: 1; overflow-y: auto; overflow-x: hidden;">
+    <div class="modal-content" style="position: relative; background: white; width: 90%; height: 90%; margin: auto; top: 5%; padding: 20px; overflow: auto;">
+        <span class="close display-2 fw-semibold" onclick="closeModal()" style="position: absolute; top: -10px; right: 20px; cursor: pointer; background-color:rgba(255, 255, 255, 0.624);">&times;</span>
+        <div id="modal-body">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        <img id="modal-image" src="" alt="Product Image" style="width: 100%; max-height: 400px; object-fit: contain;">
+                    </div>
+                    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+                        <h2 id="modal-title" class="mt-4 mb-3"></h2>
+                        <div class="">
+                            <p id="price" class="fw-semibold fs-4 mb-1"></p>
+                            <button onclick="moveToForm()" class="btn btn-modal-product px-5">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <p class="fw-semibold fs-4 mb-2">Характеристики:</p>
+                        <p id="modal-description"></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -476,6 +504,7 @@
                                         <h5 class="fs-6 fw-light flex-grow-1 product-title">${product.title}</h5>
                                         <p class="card-text fw-semibold">от ${ product.price } {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == "ultra_clear_structures" %}Р.{% else %}Р./м2{% endif %}</p>
                                         <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
+                                        <button class="btn btn-secondary fw-bold px-3 mt-2" onclick="openModal('${ product.id }', '${ product.title }', '${ product.description }', '${ product.photo }', '${ product.price }')">Подробнее</button>
                                     </div>
                                 </div>
                             </div>
@@ -511,5 +540,27 @@
         }
     });
 </script>
+<script>
+    function openModal(productId, title, description, imageUrl, price) {
+        const realPrice = price + " " + "Р."
+        document.getElementById('product-modal').style.display = 'block';
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-description').innerText = description;
+        document.getElementById('modal-image').src = imageUrl;
+        document.getElementById('price').innerText = realPrice;
+        console.log(imageUrl);
+    }
+
+    function closeModal() {
+        document.getElementById('product-modal').style.display = 'none';
+    }
+</script>
+<script>
+    function moveToForm() {
+        document.getElementById('product-modal').style.display = 'none';
+        document.getElementById('index-form').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 
 {% endblock content %}
