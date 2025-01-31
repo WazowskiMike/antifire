@@ -168,8 +168,8 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="fs-6 fw-light flex-grow-1 product-title">{{ product.title }}</h5>
                             <p class="card-text fw-semibold">от {{ product.price }} {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == 'ultra_clear_structures'%}Р.{% else %}Р./м2{% endif %}</p>
-                            <a href="#index-form" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
-                            <button class="btn btn-secondary fw-bold px-3 mt-2" onclick="openModal('{{ product.id }}', '{{ product.title }}', '{{ product.description }}', '{{ product.photo.url }}', '{{ product.price }}')">Подробнее</button>
+                            <button onclick="moveToForm()" class="btn card-btn fw-bold px-3 mt-2">Заказать</button>
+                            <button class="btn btn-secondary fw-bold px-3 mt-2" onclick="openModal('{{ product.id }}', '{{ product.title }}', '{{ product.description|escapejs }}', '{{ product.photo.url }}', '{{ product.price }}')">Подробнее</button>
                         </div>
                     </div>
                 </div>
@@ -198,7 +198,7 @@
                 <div class="row mt-4">
                     <div class="col-12">
                         <p class="fw-semibold fs-4 mb-2">Характеристики:</p>
-                        <p id="modal-description"></p>
+                        <span id="modal-description"></span>
                     </div>
                 </div>
             </div>
@@ -481,20 +481,16 @@
     document.addEventListener('DOMContentLoaded', () => {
         const filterButtons = document.querySelectorAll('.filter-btn');
         const productList = document.getElementById('product-list');
-        const defaultCategory = 'fire_doors'; // Установите категорию по умолчанию
-
-        // Функция для загрузки продуктов
+        const defaultCategory = 'fire_doors'; // Категория по умолчанию
+    
         const loadProducts = (category) => {
-            // Формируем URL для запроса
             const url = category ? `/filter-products/?category=${category}` : '/filter-products/';
-
+    
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    // Очистить текущий список продуктов
-                    productList.innerHTML = '';
-
-                    // Заполнить новыми продуктами
+                    productList.innerHTML = ''; // Очистить список
+    
                     data.products.forEach(product => {
                         const productHtml = `
                             <div class="col-12 col-lg-4 col-xl-3 mt-2 h-100">
@@ -502,9 +498,12 @@
                                     <img src="${product.photo}" class="card-img-top p-2" alt="${product.title}">
                                     <div class="card-body d-flex flex-column">
                                         <h5 class="fs-6 fw-light flex-grow-1 product-title">${product.title}</h5>
-                                        <p class="card-text fw-semibold">от ${ product.price } {% if product.category == 'fire_hatches' or product.category == 'hidden_doors' or product.category == "ultra_clear_structures" %}Р.{% else %}Р./м2{% endif %}</p>
-                                        <a href="#" class="btn card-btn fw-bold px-3 mt-2">Заказать</a>
-                                        <button class="btn btn-secondary fw-bold px-3 mt-2" onclick="openModal('${ product.id }', '${ product.title }', '${ product.description }', '${ product.photo }', '${ product.price }')">Подробнее</button>
+                                        <p class="card-text fw-semibold">от ${ product.price } Р./м2</p>
+                                        <button onclick="moveToForm()" class="btn card-btn fw-bold px-3 mt-2">Заказать</button>
+                                        <button class="btn btn-secondary fw-bold px-3 mt-2"
+                                            onclick="openModal('${product.id}', '${product.title}', \`${product.description}\`, '${product.photo}', '${product.price}')">
+                                            Подробнее
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -513,43 +512,34 @@
                     });
                 });
         };
-
-        // Установка обработчиков на кнопки фильтров
+    
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const category = button.dataset.category;
-
-                // Удалить класс 'active' у всех кнопок
                 filterButtons.forEach(btn => btn.classList.remove('active'));
-
-                // Добавить класс 'active' к текущей кнопке
                 button.classList.add('active');
-
-                // Загрузить продукты для выбранной категории
                 loadProducts(category);
             });
         });
-
-        // Загрузка продуктов для категории по умолчанию при загрузке страницы
+    
         loadProducts(defaultCategory);
-
-        // Установить активное состояние для кнопки с категорией по умолчанию
+    
         const defaultButton = document.querySelector(`.filter-btn[data-category="${defaultCategory}"]`);
         if (defaultButton) {
             defaultButton.classList.add('active');
         }
-    });
+    });    
 </script>
 <script>
     function openModal(productId, title, description, imageUrl, price) {
-        const realPrice = price + " " + "Р."
+        const realPrice = price + " Р.";
         document.getElementById('product-modal').style.display = 'block';
         document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-description').innerText = description;
+        document.getElementById('modal-description').innerHTML = description;
         document.getElementById('modal-image').src = imageUrl;
         document.getElementById('price').innerText = realPrice;
-        console.log(imageUrl);
     }
+    
 
     function closeModal() {
         document.getElementById('product-modal').style.display = 'none';

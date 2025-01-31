@@ -2,7 +2,8 @@ from django.shortcuts import get_object_or_404, render
 from .models import Blog
 from .models import Gallery, Sertificate, Product
 from django.http import JsonResponse
-
+from django.utils.html import escape
+import json
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -44,12 +45,14 @@ def filter_products(request):
         {
             'title': product.title,
             'price': product.price,
-            'description': product.description,
+            'description': escape(product.description),  # Экранирование HTML
             'photo': product.photo.url
         }
         for product in products
     ]
-    return JsonResponse({'products': products_data})
+
+    return JsonResponse({'products': products_data}, safe=False)
+
 
 def index(request):
     certificates = Sertificate.objects.all()

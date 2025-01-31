@@ -4,7 +4,7 @@ from tinymce.models import HTMLField
 
 class Blog(models.Model):
     title = models.CharField(max_length=200, verbose_name="Заголовок")
-    content = HTMLField()
+    content = HTMLField(verbose_name="Текст")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
     slug = models.SlugField(max_length=200, unique=True,blank=True) 
@@ -94,7 +94,7 @@ class Product(models.Model):
         choices=CATEGORY_CHOICES, 
         verbose_name="Категория"
     )
-    description = models.TextField(blank=True, verbose_name="Описание")
+    description = HTMLField(verbose_name="Описание")
     
     class Meta:
         verbose_name = "Продукт"
